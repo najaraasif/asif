@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.13.0",
     "@react-three/drei": "^9.88.13",
     "@react-three/fiber": "^8.15.11",
     "@types/three": "^0.168.0",
