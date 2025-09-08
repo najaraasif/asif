@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import Scene3D from './Scene3D'
 import Avatar3D from './Avatar3D'
@@ -15,12 +15,12 @@ export default function HeroSection() {
   const [charIndex, setCharIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   
-  const typewriterTexts = [
+  const typewriterTexts = useMemo(() => [
     "Software Developer", 
     "Web Developer", 
     "App Developer", 
     "Backend Developer"
-  ]
+  ], [])
 
   // Typewriter effect
   useEffect(() => {

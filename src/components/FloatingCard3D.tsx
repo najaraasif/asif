@@ -64,7 +64,7 @@ export default function FloatingCard3D({
         }
       )
     }
-  }, [])
+  }, [index, rotation])
 
   useFrame((state) => {
     const time = state.clock.elapsedTime
