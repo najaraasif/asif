@@ -191,10 +191,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Mohammad Aasif Najar**
-- Portfolio: [aasifnajar.dev](https://aasifnajar.dev)
-- GitHub: [@aasifnajar](https://github.com/aasifnajar)
-- LinkedIn: [aasifnajar](https://linkedin.com/in/aasifnajar)
-- Email: aasif@example.com
+- Portfolio: [aasifnajar.dev](https://aasifnportfolio.netlify.app/)
+- GitHub: [@aasifnajar](https://github.com/najaraasif)
+- LinkedIn: [aasifnajar](https://www.linkedin.com/in/mohammad-aasif-najar-a31615146/)
+- Email: najaraasif944@gmail.com
 
 ## 🙏 Acknowledgments
 
