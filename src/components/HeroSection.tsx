@@ -22,7 +22,7 @@ export default function HeroSection() {
     "Backend Developer"
   ], [])
 
-  // Typewriter effect
+
   useEffect(() => {
     const typeWriter = () => {
       const currentText = typewriterTexts[typewriterIndex]
@@ -52,7 +52,7 @@ export default function HeroSection() {
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 500)
     
-    // Detect mobile device
+  
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
@@ -75,13 +75,13 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Effects */}
+
       <div className="absolute inset-0 marble-texture"></div>
       
-      {/* Gradient Overlay */}
+
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-luxury-blue/40"></div>
       
-      {/* 3D Scene Container - Optimized for mobile */}
+
       <div className={`absolute inset-0 w-full h-full ${
         isMobile ? 'opacity-70' : 'opacity-100'
       }`}>
@@ -99,9 +99,9 @@ export default function HeroSection() {
         </Scene3D>
       </div>
 
-      {/* Content Overlay */}
+
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        {/* Main Heading */}
+  
         <motion.h1 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
@@ -129,7 +129,7 @@ export default function HeroSection() {
           </motion.span>
         </motion.h1>
 
-        {/* Subtitle */}
+  
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
@@ -150,7 +150,7 @@ export default function HeroSection() {
           </motion.p>
         </motion.div>
 
-        {/* Description */}
+  
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
@@ -161,7 +161,7 @@ export default function HeroSection() {
           </p>
         </motion.div>
 
-        {/* CTA Buttons */}
+  
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
@@ -193,11 +193,12 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Stats Preview */}
+  
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
           transition={{ duration: 0.8, delay: 1.2 }}
+          className="mx-auto"
         >
           <div className="grid grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-16 max-w-2xl mx-auto">
             {[
@@ -228,9 +229,9 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
+
+      <motion.div
+          className="absolute bottom-6 sm:bottom-8 w-full flex justify-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
         transition={{ duration: 0.8, delay: 1.5 }}

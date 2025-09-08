@@ -9,7 +9,7 @@ import ProjectsSection from '@/components/ProjectsSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 
-// Enhanced Loading component for 3D scenes
+
 function LoadingSpinner() {
   return (
     <motion.div 
@@ -34,19 +34,19 @@ function LoadingSpinner() {
   )
 }
 
-// Enhanced Particle system component with mobile optimization and performance
+
 function ParticleSystem() {
   const [isMobile, setIsMobile] = useState(false)
   
   useEffect(() => {
-    // Mobile detection
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
     checkMobile()
     window.addEventListener('resize', checkMobile)
 
-    // Skip particle system on very low-end devices
+    
     if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4 && isMobile) {
       return
     }
@@ -78,7 +78,7 @@ function ParticleSystem() {
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
 
-    // Optimized Particle class
+    
     class Particle {
       x: number
       y: number
@@ -107,11 +107,11 @@ function ParticleSystem() {
         this.y += this.vy
         this.life++
 
-        // Simple fade out
+        
         const lifeFactor = 1 - this.life / this.maxLife
         this.opacity = lifeFactor * 0.5
 
-        // Wrap around edges
+        
         if (this.x < 0) this.x = canvas.width
         if (this.x > canvas.width) this.x = 0
         if (this.y < 0) this.y = canvas.height
@@ -147,12 +147,12 @@ function ParticleSystem() {
       if (currentTime - lastTime >= frameInterval) {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-        // Add new particles less frequently
+        
         if (particles.length < maxParticles && Math.random() > 0.95) {
           particles.push(new Particle())
         }
 
-        // Update and draw particles
+        
         for (let i = particles.length - 1; i >= 0; i--) {
           const particle = particles[i]
           particle.update()
@@ -190,14 +190,14 @@ export default function HomePage() {
   const [isMobile, setIsMobile] = useState(false)
   
   useEffect(() => {
-    // Mobile detection
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
     checkMobile()
     window.addEventListener('resize', checkMobile)
     
-    // Smooth scrolling polyfill for older browsers
+    
     if (typeof window !== 'undefined' && typeof require !== 'undefined') {
       try {
         require('smoothscroll-polyfill').polyfill()
@@ -206,7 +206,7 @@ export default function HomePage() {
       }
     }
 
-    // Enhanced custom cursor effect (desktop only)
+    
     if (!isMobile) {
       const cursor = document.createElement('div')
       cursor.className = 'custom-cursor'
@@ -247,7 +247,7 @@ export default function HomePage() {
       document.addEventListener('mouseup', resetCursor, { passive: true })
       document.addEventListener('mouseleave', hideCursor, { passive: true })
 
-      // Add hover effects to interactive elements
+      
       const addHoverEffects = () => {
         const interactiveElements = document.querySelectorAll('button, a, .luxury-card, .touch-target')
         interactiveElements.forEach(el => {
@@ -256,7 +256,7 @@ export default function HomePage() {
         })
       }
       
-      // Run after initial render
+      
       const timeoutId = setTimeout(addHoverEffects, 1000)
       
       return () => {
@@ -284,13 +284,13 @@ export default function HomePage() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Enhanced Particle System */}
+
       <ParticleSystem />
       
-      {/* Navigation */}
+
       <Navigation />
       
-      {/* Main Content with staggered animations */}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -334,7 +334,7 @@ export default function HomePage() {
         </Suspense>
       </motion.div>
       
-      {/* Footer */}
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

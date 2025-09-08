@@ -5,8 +5,8 @@ export const personalInfo = {
   title: "Web, App & Backend Developer",
   subtitle: "Since 2017",
   location: "Kashmir, India",
-  email: "Najaraasif944@gmail.com", // Replace with actual email
-  phone: "+91 7889595508", // Replace with actual phone
+  email: "Najaraasif944@gmail.com",
+  phone: "+91 7889595508",
   bio: "A seasoned full-stack developer with 7+ years of experience crafting exceptional digital experiences. Specializing in modern web technologies, mobile applications, and scalable backend solutions.",
   yearsOfExperience: 7,
   projectsCompleted: 120,
@@ -41,32 +41,32 @@ export const achievements: Achievement[] = [
 ];
 
 export const skills: Skill[] = [
-  // Frontend
+  
   { name: "React", level: 95, category: "frontend", icon: "⚛️" },
   { name: "Next.js", level: 90, category: "frontend", icon: "▲" },
   { name: "TypeScript", level: 88, category: "frontend", icon: "📘" },
   { name: "Vue.js", level: 85, category: "frontend", icon: "💚" },
   { name: "Angular", level: 80, category: "frontend", icon: "🅰️" },
   
-  // Backend
+  
   { name: "Node.js", level: 92, category: "backend", icon: "💚" },
   { name: "Python", level: 88, category: "backend", icon: "🐍" },
   { name: "Express.js", level: 90, category: "backend", icon: "🚂" },
   { name: "Django", level: 85, category: "backend", icon: "🎸" },
   { name: "PHP", level: 82, category: "backend", icon: "🐘" },
   
-  // Mobile
+  
   { name: "React Native", level: 88, category: "mobile", icon: "📱" },
   { name: "Flutter", level: 85, category: "mobile", icon: "🦋" },
   { name: "Swift", level: 75, category: "mobile", icon: "🍎" },
   
-  // Database
+  
   { name: "MongoDB", level: 90, category: "database", icon: "🍃" },
   { name: "PostgreSQL", level: 88, category: "database", icon: "🐘" },
   { name: "MySQL", level: 85, category: "database", icon: "🗄️" },
   { name: "Redis", level: 82, category: "database", icon: "📊" },
   
-  // Tools
+  
   { name: "Git", level: 95, category: "tools", icon: "🌿" },
   { name: "Docker", level: 88, category: "tools", icon: "🐳" },
   { name: "AWS", level: 85, category: "tools", icon: "☁️" },
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     id: "biteque",
     title: "BiteQue",
     description: "A comprehensive food delivery platform with real-time tracking, payment integration, and restaurant management system.",
-    image: "/projects/biteque.jpg", // You'll need to add actual images
+    image: "/projects/biteque.jpg",
     technologies: ["React Native", "Node.js", "MongoDB", "Socket.io", "Stripe"],
     liveUrl: "#",
     githubUrl: "#",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
 export const socialLinks: SocialLink[] = [
   {
     name: "GitHub",
-    url: "https://github.com/najaraasif", // Replace with actual URLs
+    url: "https://github.com/najaraasif",
     icon: "🐙"
   },
   {

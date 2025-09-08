@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 :root {
   --foreground-rgb: 255, 255, 255;
@@ -27,7 +27,7 @@ body {
   background: linear-gradient(135deg, var(--background-start-rgb), var(--background-end-rgb));
   color: rgb(var(--foreground-rgb));
   scroll-behavior: smooth;
-  /* Mobile optimizations */
+  
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,14 +37,14 @@ body {
   background-attachment: fixed;
 }
 
-/* Mobile viewport fixes */
+
 @supports (-webkit-touch-callout: none) {
   body {
     background-attachment: scroll;
   }
 }
 
-/* Touch-friendly interactions */
+
 @media (hover: none) and (pointer: coarse) {
   .hover\:scale-105:hover {
     transform: none;
@@ -60,7 +60,7 @@ a {
   text-decoration: none;
 }
 
-/* Custom scrollbar */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -78,14 +78,14 @@ a {
   background: #B8860B;
 }
 
-/* Luxury glass effect */
+
 .glass-effect {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Marble texture */
+
 .marble-texture {
   background-image: 
     radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
@@ -93,7 +93,7 @@ a {
     linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
 }
 
-/* Gold glow effect */
+
 .gold-glow {
   box-shadow: 
     0 0 10px rgba(212, 175, 55, 0.3),
@@ -101,12 +101,12 @@ a {
     0 0 30px rgba(212, 175, 55, 0.1);
 }
 
-/* Luxury button styles */
+
 .luxury-button {
   @apply px-8 py-4 bg-gradient-to-r from-luxury-gold to-yellow-600 text-black font-semibold rounded-lg;
   @apply transform transition-all duration-300 hover:scale-105 hover:shadow-2xl;
   @apply relative overflow-hidden touch-target;
-  /* Enhanced mobile touch feedback */
+  
   -webkit-tap-highlight-color: rgba(212, 175, 55, 0.3);
   user-select: none;
   -webkit-user-select: none;
@@ -134,7 +134,7 @@ a {
   left: 100%;
 }
 
-/* Floating animation */
+
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotateY(0deg); }
   33% { transform: translateY(-10px) rotateY(120deg); }
@@ -155,7 +155,7 @@ a {
   }
 }
 
-/* Particle effect background */
+
 .particle-bg {
   position: fixed;
   top: 0;
@@ -166,7 +166,7 @@ a {
   z-index: -1;
 }
 
-/* Luxury card styles */
+
 .luxury-card {
   @apply glass-effect rounded-xl p-6 transform transition-all duration-500;
   @apply hover:scale-105 hover:rotate-1;
@@ -179,12 +179,12 @@ a {
     0 0 30px rgba(212, 175, 55, 0.1);
 }
 
-/* Section padding */
+
 .section-padding {
   @apply px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20;
 }
 
-/* Mobile-first optimizations */
+
 @media (max-width: 640px) {
   .section-padding {
     @apply py-8;
@@ -192,20 +192,20 @@ a {
   
   .luxury-button {
     @apply px-6 py-3 text-base;
-    min-height: 44px; /* Apple's recommended touch target size */
+    min-height: 44px;
   }
   
   .glass-effect {
     backdrop-filter: blur(8px);
   }
   
-  /* Reduce motion for performance on mobile */
+  
   .animate-float, .animate-bounce, .animate-spin {
     animation-duration: 2s;
   }
 }
 
-/* Enhanced mobile touch targets */
+
 .touch-target {
   min-height: 44px;
   min-width: 44px;
@@ -214,7 +214,7 @@ a {
   justify-content: center;
 }
 
-/* Mobile-specific 3D optimizations */
+
 @media (max-width: 768px) {
   canvas {
     image-rendering: optimizeSpeed;
@@ -222,12 +222,12 @@ a {
   }
 }
 
-/* Prevent zoom on input focus (iOS) */
+
 input, textarea, select {
   font-size: 16px;
 }
 
-/* Custom mobile scrollbar */
+
 @media (max-width: 768px) {
   ::-webkit-scrollbar {
     width: 4px;
@@ -239,7 +239,7 @@ input, textarea, select {
   }
 }
 
-/* Enhanced animations for mobile */
+
 @keyframes mobile-float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-5px); }
@@ -254,7 +254,7 @@ input, textarea, select {
   }
 }
 
-/* Mobile-specific luxury card */
+
 @media (max-width: 640px) {
   .luxury-card {
     @apply p-4;

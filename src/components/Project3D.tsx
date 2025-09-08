@@ -28,12 +28,12 @@ export default function Project3D({
   useFrame((state) => {
     if (groupRef.current) {
       if (isActive) {
-        // Active project - center and scale up
+      
         groupRef.current.position.lerp(new THREE.Vector3(0, 0, 1), 0.1)
         groupRef.current.scale.lerp(new THREE.Vector3(1.2, 1.2, 1.2), 0.1)
         groupRef.current.rotation.y = THREE.MathUtils.lerp(groupRef.current.rotation.y, 0, 0.1)
       } else {
-        // Inactive projects - original position and scale
+      
         groupRef.current.position.lerp(new THREE.Vector3(...position), 0.1)
         groupRef.current.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1)
         groupRef.current.rotation.y = THREE.MathUtils.lerp(
@@ -68,7 +68,7 @@ export default function Project3D({
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      {/* Frame */}
+
       <mesh ref={frameRef} castShadow receiveShadow>
         <RoundedBox args={[3, 2, 0.2]} radius={0.1} smoothness={4}>
           <meshStandardMaterial
@@ -81,7 +81,7 @@ export default function Project3D({
         </RoundedBox>
       </mesh>
 
-      {/* Project Image Placeholder */}
+
       <mesh position={[0, 0, 0.11]}>
         <planeGeometry args={[2.6, 1.6]} />
         <meshStandardMaterial
@@ -91,7 +91,7 @@ export default function Project3D({
         />
       </mesh>
 
-      {/* Project Title */}
+
       <Text
         position={[0, -1.2, 0.11]}
         fontSize={0.2}
@@ -105,7 +105,7 @@ export default function Project3D({
         {project.title}
       </Text>
 
-      {/* Technology Tags (visible when active) */}
+
       {isActive && (
         <group position={[0, -1.6, 0.11]}>
           {project.technologies.slice(0, 3).map((tech, index) => (
@@ -131,7 +131,7 @@ export default function Project3D({
         </group>
       )}
 
-      {/* Glow Effect for Active Project */}
+
       {isActive && (
         <mesh scale={1.1}>
           <RoundedBox args={[3, 2, 0.2]} radius={0.1} smoothness={4}>
@@ -145,7 +145,7 @@ export default function Project3D({
         </mesh>
       )}
 
-      {/* Hover Glow */}
+
       {hovered && !isActive && (
         <mesh scale={1.05}>
           <RoundedBox args={[3, 2, 0.2]} radius={0.1} smoothness={4}>

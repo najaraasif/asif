@@ -13,7 +13,7 @@ export default function Navigation() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
       
-      // Update active section based on scroll position
+    
       const sections = navigation.map(item => item.href.substring(1))
       const currentSection = sections.find(section => {
         const element = document.getElementById(section)
@@ -33,27 +33,17 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const nav = document.querySelector('nav')
-      if (nav && !nav.contains(event.target as Node)) {
-        setIsMobileMenuOpen(false)
-      }
-    }
 
-    if (isMobileMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-      return () => document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isMobileMenuOpen])
+
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
+    const id = href.startsWith('#') ? href.substring(1) : href
+    const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
-      setIsMobileMenuOpen(false)
-      setActiveSection(href.substring(1))
+      // Delay closing the menu slightly so scroll works smoothly
+      setTimeout(() => setIsMobileMenuOpen(false), 300)
+      setActiveSection(id)
     }
   }
 
@@ -70,7 +60,7 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Logo */}
+    
           <motion.div 
             className="flex-shrink-0"
             whileHover={{ scale: 1.05 }}
@@ -91,7 +81,7 @@ export default function Navigation() {
             </button>
           </motion.div>
 
-          {/* Desktop Navigation */}
+    
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navigation.map((item, index) => (
@@ -127,11 +117,11 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
+    
           <div className="md:hidden">
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-luxury-gold focus:outline-none focus:ring-2 focus:ring-luxury-gold touch-target"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-luxury-gold focus:outline-none focus:ring-2 focus:ring-luxury-gold touch-target z-50"
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle mobile menu"
             >
@@ -139,7 +129,7 @@ export default function Navigation() {
                 animate={{ rotate: isMobileMenuOpen ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Animated Hamburger/Close icon */}
+          
                 <svg
                   className="h-6 w-6"
                   fill="none"
@@ -164,7 +154,6 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -172,7 +161,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden glass-effect border-t border-luxury-gold/20 overflow-hidden"
+            className="md:hidden glass-effect border-t border-luxury-gold/20 overflow-hidden z-50 relative"
           >
             <div className="px-4 pt-4 pb-6 space-y-2">
               {navigation.map((item, index) => (

@@ -12,7 +12,7 @@ export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    // Mobile detection
+  
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
@@ -40,7 +40,7 @@ export default function AboutSection() {
     }
   }, [])
 
-  // Animation variants
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,7 +83,7 @@ export default function AboutSection() {
       id="about" 
       className="relative min-h-screen py-12 sm:py-16 lg:py-20 section-padding"
     >
-      {/* Background Effects */}
+
       <div className="absolute inset-0 marble-texture opacity-50"></div>
       
       <motion.div 
@@ -92,7 +92,7 @@ export default function AboutSection() {
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
       >
-        {/* Section Header */}
+  
         <motion.div 
           className="text-center mb-12 sm:mb-16"
           variants={itemVariants}
@@ -117,7 +117,7 @@ export default function AboutSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
-          {/* Text Content - Takes 2 columns on desktop */}
+    
           <motion.div 
             className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
             variants={itemVariants}
@@ -192,7 +192,7 @@ export default function AboutSection() {
               </motion.p>
             </motion.div>
             
-            {/* Achievement Stats Grid */}
+      
             <motion.div 
               className="md:col-span-2 grid grid-cols-2 lg:grid-cols-4 gap-4"
               variants={containerVariants}
@@ -217,7 +217,7 @@ export default function AboutSection() {
             </motion.div>
           </motion.div>
 
-          {/* 3D Achievements Cards - Right column on desktop, hidden on mobile */}
+    
           {!isMobile && (
             <motion.div 
               className="relative h-96 lg:h-[600px]"
@@ -248,7 +248,7 @@ export default function AboutSection() {
           )}
         </div>
 
-        {/* Skills Preview */}
+  
         <motion.div 
           className="mt-16 sm:mt-20 text-center"
           variants={itemVariants}
@@ -296,7 +296,7 @@ export default function AboutSection() {
         </motion.div>
       </motion.div>
 
-      {/* Enhanced Parallax Elements */}
+
       <motion.div 
         className="absolute top-1/4 left-4 sm:left-10 w-2 h-2 bg-luxury-gold rounded-full opacity-60"
         animate={{ 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-// Animation utilities
+
 export const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   animate: { opacity: 1, y: 0 },
@@ -33,7 +33,7 @@ export const staggerContainer = {
   }
 }
 
-// 3D Animation utilities
+
 export const float3D = (speed = 1, amplitude = 0.1) => ({
   y: `${amplitude * Math.sin(Date.now() * 0.001 * speed)}`,
 })
@@ -42,7 +42,7 @@ export const rotate3D = (speed = 1) => ({
   rotationY: `${(Date.now() * 0.001 * speed) % (Math.PI * 2)}`,
 })
 
-// Intersection Observer utility
+
 export const useIntersectionObserver = (
   elementRef: React.RefObject<Element>,
   options: IntersectionObserverInit = {}
@@ -70,7 +70,7 @@ export const useIntersectionObserver = (
   return isIntersecting
 }
 
-// Scroll utilities
+
 export const scrollToElement = (elementId: string) => {
   const element = document.querySelector(elementId)
   if (element) {
@@ -86,7 +86,7 @@ export const getScrollProgress = () => {
   return Math.min(scrolled / maxScroll, 1)
 }
 
-// Performance utilities
+
 export const debounce = (func: Function, wait: number) => {
   let timeout: NodeJS.Timeout
   return function executedFunction(...args: any[]) {

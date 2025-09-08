@@ -39,7 +39,7 @@ export default function Scene3D({
     const checkDevice = () => {
       const mobile = window.innerWidth < 768
       setIsMobile(mobile)
-      // Limit pixel ratio on mobile for better performance
+    
       setPixelRatio(mobile ? Math.min(window.devicePixelRatio, 1.5) : window.devicePixelRatio)
     }
     
@@ -51,17 +51,17 @@ export default function Scene3D({
     <div className={className}>
       <Canvas
         gl={{ 
-          antialias: !isMobile, // Disable antialiasing on mobile for performance
+          antialias: !isMobile,
           alpha: true,
           powerPreference: "high-performance",
           stencil: false,
           depth: true,
-          logarithmicDepthBuffer: isMobile, // Better depth precision on mobile
+          logarithmicDepthBuffer: isMobile,
         }}
-        dpr={[1, pixelRatio]} // Adaptive pixel ratio
-        shadows={!isMobile} // Disable shadows on mobile
+        dpr={[1, pixelRatio]}
+        shadows={!isMobile}
         performance={{
-          min: isMobile ? 0.3 : 0.5, // Lower minimum fps on mobile
+          min: isMobile ? 0.3 : 0.5,
         }}
         camera={{
           position: camera.position,
@@ -70,11 +70,11 @@ export default function Scene3D({
           far: 1000
         }}
       >
-        {/* Adaptive DPR and Events for performance */}
+  
         <AdaptiveDpr pixelated />
         <AdaptiveEvents />
         
-        {/* Performance-optimized lighting */}
+  
         <ambientLight intensity={isMobile ? 0.3 : 0.2} />
         
         {!isMobile && (
@@ -104,7 +104,7 @@ export default function Scene3D({
           </>
         )}
         
-        {/* Mobile-optimized lighting */}
+  
         {isMobile && (
           <>
             <directionalLight 
@@ -125,7 +125,7 @@ export default function Scene3D({
           color="#D4AF37"
         />
 
-        {/* Controls with touch support */}
+  
         {controls && (
           <OrbitControls 
             enablePan={false}
@@ -136,7 +136,7 @@ export default function Scene3D({
             enableDamping
             dampingFactor={0.05}
             rotateSpeed={isMobile ? 0.3 : 0.5}
-            // Touch-specific settings
+          
             touches={{
               ONE: THREE.TOUCH.ROTATE,
               TWO: THREE.TOUCH.DOLLY_PAN
@@ -149,12 +149,12 @@ export default function Scene3D({
           />
         )}
 
-        {/* Scene Content */}
+  
         <Suspense fallback={null}>
           {children}
         </Suspense>
         
-        {/* Fog for depth and performance */}
+  
         <fog attach="fog" args={['#0A0A0A', 10, 50]} />
       </Canvas>
     </div>

@@ -11,13 +11,13 @@ export default function Footer() {
 
   return (
     <footer className="relative py-16 section-padding">
-      {/* Background Effects */}
+
       <div className="absolute inset-0 marble-texture opacity-20"></div>
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-luxury-gold to-transparent"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {/* Brand */}
+    
           <div className="text-center md:text-left">
             <button
               onClick={scrollToTop}
@@ -33,7 +33,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+    
           <div className="text-center">
             <h3 className="text-lg font-semibold text-luxury-gold mb-4">
               Quick Links
@@ -56,7 +56,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Social Links */}
+    
           <div className="text-center md:text-right">
             <h3 className="text-lg font-semibold text-luxury-gold mb-4">
               Connect
@@ -83,10 +83,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
+  
         <div className="h-px bg-gradient-to-r from-transparent via-luxury-gold/30 to-transparent mb-8"></div>
 
-        {/* Bottom Bar */}
+  
         <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
           <p className="mb-4 md:mb-0">
             © {currentYear} {personalInfo.name}. All rights reserved.
@@ -101,7 +101,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Scroll to Top Button */}
+  
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 w-12 h-12 bg-luxury-gold hover:bg-yellow-600 text-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-2xl z-50"
@@ -113,7 +113,7 @@ export default function Footer() {
         </button>
       </div>
 
-      {/* Ambient Effects */}
+
       <div className="absolute bottom-0 left-1/4 w-1 h-1 bg-luxury-gold rounded-full animate-pulse opacity-60"></div>
       <div className="absolute bottom-0 right-1/3 w-2 h-2 bg-luxury-gold rounded-full animate-pulse opacity-40 delay-1000"></div>
     </footer>

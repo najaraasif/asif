@@ -31,7 +31,7 @@ export default function FloatingCard3D({
   const [flipped, setFlipped] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Detect mobile device
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
@@ -41,7 +41,7 @@ export default function FloatingCard3D({
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  // Entry animation with GSAP
+
   useEffect(() => {
     if (groupRef.current) {
       gsap.fromTo(groupRef.current.scale,
@@ -70,13 +70,13 @@ export default function FloatingCard3D({
     const time = state.clock.elapsedTime
     
     if (groupRef.current) {
-      // Enhanced floating animation
+    
       const floatIntensity = isMobile ? 0.1 : 0.2
       const rotationSpeed = isMobile ? 0.3 : 0.5
       
       groupRef.current.position.y = position[1] + Math.sin(time * 0.8 + index) * floatIntensity
       
-      // Gentle rotation when not hovered
+    
       if (!hovered) {
         groupRef.current.rotation.y = rotation[1] + Math.sin(time * rotationSpeed + index) * 0.1
         groupRef.current.rotation.x = Math.sin(time * 0.3 + index) * 0.05
@@ -85,7 +85,7 @@ export default function FloatingCard3D({
 
     if (cardRef.current) {
       if (hovered) {
-        // Enhanced hover animation
+      
         cardRef.current.scale.setScalar(THREE.MathUtils.lerp(cardRef.current.scale.x, 1.1, 0.1))
         if (glowRef.current) {
           glowRef.current.scale.setScalar(THREE.MathUtils.lerp(glowRef.current.scale.x, 1.3, 0.1))
@@ -97,7 +97,7 @@ export default function FloatingCard3D({
         }
       }
       
-      // Pulsing animation
+    
       const pulseScale = 1 + Math.sin(time * 2 + index) * 0.02
       cardRef.current.scale.multiplyScalar(pulseScale)
     }
@@ -106,7 +106,7 @@ export default function FloatingCard3D({
   const handleClick = () => {
     setFlipped(!flipped)
     
-    // Animate flip with GSAP
+  
     if (cardRef.current) {
       gsap.to(cardRef.current.rotation, {
         y: flipped ? 0 : Math.PI,
@@ -119,7 +119,7 @@ export default function FloatingCard3D({
   const handleHover = (hovering: boolean) => {
     setHovered(hovering)
     
-    // Enhanced hover animation with GSAP
+  
     if (cardRef.current) {
       gsap.to(cardRef.current.position, {
         z: hovering ? 0.2 : 0,
@@ -137,7 +137,7 @@ export default function FloatingCard3D({
       onPointerOver={() => handleHover(true)}
       onPointerOut={() => handleHover(false)}
     >
-      {/* Main Card */}
+
       <mesh 
         ref={cardRef} 
         rotation={[0, 0, 0]} 
@@ -157,7 +157,7 @@ export default function FloatingCard3D({
         </RoundedBox>
       </mesh>
       
-      {/* Enhanced Glow Effect */}
+
       <mesh 
         ref={glowRef}
         scale={hovered ? 1.2 : 1.1}
@@ -173,7 +173,7 @@ export default function FloatingCard3D({
         </RoundedBox>
       </mesh>
       
-      {/* Outer glow ring */}
+
       {hovered && (
         <mesh scale={1.4}>
           <RoundedBox args={[2, 2.5, 0.1]} radius={0.1} smoothness={4}>
@@ -188,10 +188,10 @@ export default function FloatingCard3D({
         </mesh>
       )}
 
-      {/* Front Side Content */}
+
       {!flipped && (
         <group position={[0, 0, 0.06]}>
-          {/* Icon */}
+    
           <Text
             position={[0, 0.8, 0]}
             fontSize={0.6}
@@ -202,7 +202,7 @@ export default function FloatingCard3D({
             {achievement.icon}
           </Text>
 
-          {/* Value */}
+    
           <Text
             position={[0, 0.2, 0]}
             fontSize={0.4}
@@ -214,7 +214,7 @@ export default function FloatingCard3D({
             {achievement.value}
           </Text>
 
-          {/* Title */}
+    
           <Text
             position={[0, -0.3, 0]}
             fontSize={0.2}
@@ -229,7 +229,7 @@ export default function FloatingCard3D({
         </group>
       )}
 
-      {/* Back Side Content */}
+
       {flipped && (
         <group position={[0, 0, 0.06]} rotation={[0, Math.PI, 0]}>
           <Text
@@ -246,7 +246,7 @@ export default function FloatingCard3D({
         </group>
       )}
       
-      {/* Floating particles around card */}
+
       {hovered && (
         <points>
           <bufferGeometry>

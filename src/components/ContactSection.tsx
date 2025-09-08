@@ -24,7 +24,7 @@ export default function ContactSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    // Mobile detection
+  
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
@@ -52,7 +52,7 @@ export default function ContactSection() {
     }
   }, [])
 
-  // Animation variants
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -78,7 +78,7 @@ export default function ContactSection() {
 
   const handleInputChange = (field: keyof ContactForm, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
-    // Clear status when user starts typing
+  
     if (formStatus.type) {
       setFormStatus({ type: null, message: '' })
     }
@@ -89,13 +89,13 @@ export default function ContactSection() {
     setIsSubmitting(true)
     setFormStatus({ type: null, message: '' })
     
-    // Create FormData for form submission
+  
     const form = e.target as HTMLFormElement
     const formDataObj = new FormData(form)
     formDataObj.append('_next', window.location.href)
     
     try {
-      // Use Formspree or similar service
+    
       const response = await fetch(form.action || 'https://formspree.io/f/mwpozrjn', {
         method: 'POST',
         body: formDataObj,
@@ -143,11 +143,11 @@ export default function ContactSection() {
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
     >
-      {/* Background Effects */}
+
       <div className="absolute inset-0 marble-texture opacity-40"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Section Header */}
+  
         <motion.div 
           className="text-center mb-12 sm:mb-16"
           variants={itemVariants}
@@ -172,12 +172,12 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          {/* Contact Information */}
+    
           <motion.div 
             className="space-y-6 sm:space-y-8"
             variants={itemVariants}
           >
-            {/* Contact Details */}
+      
             <motion.div 
               className="glass-effect rounded-2xl p-6 sm:p-8 luxury-card"
               whileHover={{ 
@@ -231,7 +231,7 @@ export default function ContactSection() {
               </div>
             </motion.div>
 
-            {/* Social Links */}
+      
             <motion.div 
               className="glass-effect rounded-2xl p-6 sm:p-8 luxury-card"
               whileHover={{ 
@@ -295,7 +295,7 @@ export default function ContactSection() {
               </motion.div>
             </motion.div>
 
-            {/* Contact Form */}
+      
             <motion.div 
               className="glass-effect rounded-2xl p-6 sm:p-8 luxury-card"
               whileHover={{ 
@@ -314,7 +314,7 @@ export default function ContactSection() {
                 Send Message
               </motion.h3>
               
-              {/* Form Status Messages */}
+        
               {formStatus.type && (
                 <motion.div 
                   className={`mb-6 p-4 rounded-lg ${
@@ -438,7 +438,7 @@ export default function ContactSection() {
             </motion.div>
           </motion.div>
 
-          {/* 3D Contact Form - Desktop Only */}
+    
           {!isMobile && (
             <motion.div 
               className="relative h-96 lg:h-[700px]"
@@ -455,7 +455,7 @@ export default function ContactSection() {
                 />
               </Scene3D>
               
-              {/* 3D Form Instructions */}
+        
               <motion.div 
                 className="absolute bottom-4 left-4 glass-effect rounded-lg p-3"
                 initial={{ opacity: 0, y: 20 }}

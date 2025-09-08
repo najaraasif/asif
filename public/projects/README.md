@@ -24,6 +24,6 @@ Images are referenced in `src/lib/data.ts` in the projects array:
   id: "project-name",
   title: "Project Title",
   image: "/projects/project-image.jpg",
-  // ... other properties
+  
 }
 ```

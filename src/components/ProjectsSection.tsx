@@ -13,7 +13,7 @@ export default function ProjectsSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    // Mobile detection
+  
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
     }
   }, [])
 
-  // Animation variants
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -65,7 +65,7 @@ export default function ProjectsSection() {
     }
   }
 
-  // Auto-rotate projects (disabled on mobile for better performance)
+
   useEffect(() => {
     if (isMobile) return
     
@@ -102,11 +102,11 @@ export default function ProjectsSection() {
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
     >
-      {/* Background Effects */}
+
       <div className="absolute inset-0 marble-texture opacity-30"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Section Header */}
+  
         <motion.div 
           className="text-center mb-12 sm:mb-16"
           variants={itemVariants}
@@ -130,12 +130,12 @@ export default function ProjectsSection() {
           </motion.p>
         </motion.div>
 
-        {/* Featured Project Section */}
+  
         <motion.div 
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-20"
           variants={itemVariants}
         >
-          {/* Project Details */}
+    
           <motion.div 
             className="space-y-6 sm:space-y-8"
             variants={itemVariants}
@@ -182,7 +182,7 @@ export default function ProjectsSection() {
                 {currentProject.description}
               </motion.p>
 
-              {/* Technologies */}
+        
               <motion.div 
                 className="mb-6"
                 initial={{ opacity: 0, y: 20 }}
@@ -206,7 +206,7 @@ export default function ProjectsSection() {
                 </div>
               </motion.div>
 
-              {/* Action Buttons */}
+        
               <motion.div 
                 className="flex flex-col sm:flex-row gap-4"
                 initial={{ opacity: 0, y: 20 }}
@@ -240,7 +240,7 @@ export default function ProjectsSection() {
               </motion.div>
             </motion.div>
 
-            {/* Project Navigation */}
+      
             <motion.div 
               className="flex justify-center gap-2"
               initial={{ opacity: 0 }}
@@ -264,7 +264,7 @@ export default function ProjectsSection() {
             </motion.div>
           </motion.div>
 
-          {/* 3D Gallery - Only on desktop */}
+    
           {!isMobile && (
             <motion.div 
               className="relative h-96 lg:h-[600px]"
@@ -286,7 +286,7 @@ export default function ProjectsSection() {
                 ))}
               </Scene3D>
               
-              {/* 3D Scene Instructions */}
+        
               <motion.div 
                 className="absolute bottom-4 left-4 glass-effect rounded-lg p-3"
                 initial={{ opacity: 0, y: 20 }}

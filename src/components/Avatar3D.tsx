@@ -20,7 +20,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isMobile, setIsMobile] = useState(false)
   
-  // Detect mobile device
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
@@ -30,7 +30,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  // Mouse tracking for desktop
+
   useEffect(() => {
     if (isMobile) return
     
@@ -45,10 +45,10 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [isMobile])
 
-  // GSAP animations on mount
+
   useEffect(() => {
     if (meshRef.current) {
-      // Animate the mesh scale vector components
+
       gsap.fromTo(meshRef.current.scale, 
         { x: 0, y: 0, z: 0 },
         { 
@@ -59,7 +59,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
         }
       )
       
-      // Animate rotation
+
       gsap.fromTo(meshRef.current.rotation,
         { y: Math.PI * 2 },
         { 
@@ -72,7 +72,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
     }
     
     if (ringsRef.current) {
-      // Animate each ring individually
+
       ringsRef.current.children.forEach((child, index) => {
         if (child instanceof THREE.Mesh) {
           gsap.fromTo(child.scale,
@@ -89,19 +89,19 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
     }
   }, [scale])
   
-  // Enhanced animation loop
+
   useFrame((state) => {
     const time = state.clock.elapsedTime
     
     if (meshRef.current) {
-      // Main avatar floating and rotation
+
       const floatIntensity = isMobile ? 0.05 : 0.1
       const rotationSpeed = isMobile ? 0.3 : 0.5
       
       meshRef.current.rotation.y = Math.sin(time * rotationSpeed) * 0.1
       meshRef.current.position.y = position[1] + Math.sin(time * 0.8) * floatIntensity
       
-      // Mouse interaction for desktop
+
       if (!isMobile) {
         meshRef.current.rotation.x = mousePosition.y * 0.1
         meshRef.current.rotation.z = mousePosition.x * 0.05
@@ -113,20 +113,20 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
       glowRef.current.rotation.y += glowSpeed
       glowRef.current.rotation.x += glowSpeed * 0.5
       
-      // Pulsing glow effect
+
       const pulseScale = 1.5 + Math.sin(time * 2) * 0.1
       glowRef.current.scale.setScalar(pulseScale)
     }
     
     if (ringsRef.current) {
-      // Rotate rings in different directions
+
       ringsRef.current.children.forEach((ring, index) => {
         if (ring instanceof THREE.Mesh) {
           const direction = index % 2 === 0 ? 1 : -1
           const speed = isMobile ? 0.005 : 0.01
           ring.rotation.z += direction * speed * (index + 1)
           
-          // Add subtle floating motion
+
           ring.position.y = Math.sin(time * 2 + index) * 0.02
         }
       })
@@ -138,7 +138,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
     }
   })
 
-  // Enhanced materials with better performance
+
   const goldMaterial = useMemo(() => 
     new THREE.MeshStandardMaterial({
       color: '#D4AF37',
@@ -160,7 +160,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
     }), []
   )
   
-  // Enhanced particle system
+
   const particlePositions = useMemo(() => {
     const positions = new Float32Array(300)
     for (let i = 0; i < 100; i++) {
@@ -184,7 +184,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
 
   return (
     <group position={position} scale={scale}>
-      {/* Main Avatar Sphere */}
+
       <mesh ref={meshRef} castShadow receiveShadow>
         <sphereGeometry args={[1.2, isMobile ? 32 : 64, isMobile ? 32 : 64]} />
         <MeshDistortMaterial
@@ -198,7 +198,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
         />
       </mesh>
 
-      {/* Enhanced Glow Effect */}
+
       <mesh ref={glowRef} scale={1.5}>
         <sphereGeometry args={[1.2, 32, 32]} />
         <meshBasicMaterial
@@ -210,7 +210,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
         />
       </mesh>
       
-      {/* Outer glow ring */}
+
       <mesh scale={2.2}>
         <sphereGeometry args={[1.2, 16, 16]} />
         <meshBasicMaterial
@@ -222,7 +222,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
         />
       </mesh>
 
-      {/* Floating Rings */}
+
       <group ref={ringsRef}>
         {[1.8, 2.2, 2.6].map((radius, index) => (
           <mesh
@@ -241,7 +241,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
         ))}
       </group>
       
-      {/* Additional animated rings */}
+
       <group>
         {[3.0, 3.5].map((radius, index) => (
           <mesh
@@ -264,7 +264,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
         ))}
       </group>
 
-      {/* Enhanced Particle System */}
+
       <points ref={particlesRef}>
         <bufferGeometry>
           <bufferAttribute
@@ -277,7 +277,7 @@ export default function Avatar3D({ position = [0, 0, 0], scale = 1 }: Avatar3DPr
         <primitive object={particleMaterial} />
       </points>
       
-      {/* Additional floating particles */}
+
       <points>
         <bufferGeometry>
           <bufferAttribute

@@ -36,7 +36,7 @@ export default function ContactForm3D({ position, formData, onFieldFocus }: Cont
 
   return (
     <group ref={groupRef} position={position}>
-      {/* Form Background */}
+
       <mesh position={[0, 0.4, -0.1]}>
         <RoundedBox args={[4, 5, 0.2]} radius={0.2} smoothness={4}>
           <meshStandardMaterial
@@ -49,10 +49,10 @@ export default function ContactForm3D({ position, formData, onFieldFocus }: Cont
         </RoundedBox>
       </mesh>
 
-      {/* Form Fields */}
+
       {fields.map((field) => (
         <group key={field.name} position={field.position}>
-          {/* Field Container */}
+    
           <mesh
             onClick={() => onFieldFocus(field.name)}
             onPointerOver={() => setHoveredField(field.name)}
@@ -75,7 +75,7 @@ export default function ContactForm3D({ position, formData, onFieldFocus }: Cont
             </RoundedBox>
           </mesh>
 
-          {/* Field Label */}
+    
           <Text
             position={[-1.5, field.large ? 0.3 : 0.1, 0.06]}
             fontSize={0.15}
@@ -86,7 +86,7 @@ export default function ContactForm3D({ position, formData, onFieldFocus }: Cont
             {field.label}
           </Text>
 
-          {/* Field Value */}
+    
           <Text
             position={[-1.5, field.large ? -0.1 : -0.1, 0.06]}
             fontSize={0.12}
@@ -98,7 +98,7 @@ export default function ContactForm3D({ position, formData, onFieldFocus }: Cont
             {field.value || `Enter your ${field.label.toLowerCase()}...`}
           </Text>
 
-          {/* Glow Effect on Hover */}
+    
           {hoveredField === field.name && (
             <mesh scale={1.05}>
               <RoundedBox 
@@ -118,7 +118,7 @@ export default function ContactForm3D({ position, formData, onFieldFocus }: Cont
         </group>
       ))}
 
-      {/* Submit Button */}
+
       <group position={[0, -2, 0]}>
         <mesh
           onPointerOver={() => setHoveredField('submit')}
@@ -160,7 +160,7 @@ export default function ContactForm3D({ position, formData, onFieldFocus }: Cont
         )}
       </group>
 
-      {/* Floating Particles */}
+
       <points>
         <bufferGeometry>
           <bufferAttribute

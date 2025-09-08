@@ -1,9 +1,5 @@
-# Mohammad Aasif Najar - Portfolio
-
-A stunning, ultra-luxurious 3D portfolio website showcasing the work of Mohammad Aasif Najar, a seasoned web and app developer with over a decade of experience. Built with cutting-edge web technologies and immersive 3D elements.
-
 Check the live demo here: [najaraasif.dev](https://aasifnportfolio.netlify.app/)
-## ✨ Features
+
 
 ### 🎨 Ultra-Luxurious Design
 - **High-end aesthetic**: Black marble textures, brushed gold accents, deep midnight-blue lighting
@@ -28,7 +24,7 @@ Check the live demo here: [najaraasif.dev](https://aasifnportfolio.netlify.app/)
 - **Tailwind CSS**: Utility-first styling with custom luxury theme
 - **Framer Motion**: Smooth page transitions and micro-interactions
 
-## 🛠️ Technologies Used
+
 
 - **Frontend**: Next.js, React, TypeScript
 - **3D Graphics**: Three.js, React Three Fiber, Drei
@@ -36,16 +32,16 @@ Check the live demo here: [najaraasif.dev](https://aasifnportfolio.netlify.app/)
 - **Animation**: Framer Motion, GSAP
 - **Build Tools**: PostCSS, Autoprefixer
 
-## 📋 Prerequisites
+
 
 Before you begin, ensure you have the following installed:
 - **Node.js** (v18.0.0 or higher)
 - **npm** or **yarn** package manager
 - Modern web browser with WebGL support
 
-## 🚀 Installation & Setup
 
-1. **Clone the repository**
+
+
    ```bash
    git clone https://github.com/aasifnajar/portfolio.git
    cd portfolio
@@ -65,7 +61,7 @@ Before you begin, ensure you have the following installed:
    yarn dev
    ```
 
-4. **Open your browser**
+
    Navigate to `http://localhost:3000` to view the portfolio
 
 ## 📁 Project Structure
@@ -96,7 +92,7 @@ src/
     └── index.ts          # Type definitions
 ```
 
-## 🎨 Customization
+
 
 ### Personal Information
 Update your details in `src/lib/data.ts`:
@@ -106,7 +102,7 @@ export const personalInfo = {
   name: "Your Name",
   title: "Your Title",
   email: "your.email@example.com",
-  // ... other details
+
 }
 ```
 
@@ -177,7 +173,7 @@ The project can be deployed to any platform that supports Next.js:
 - **Fallbacks**: Traditional forms for complex 3D interactions
 - **Responsive**: Fluid layouts across all screen sizes
 
-## 🤝 Contributing
+
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -185,11 +181,11 @@ The project can be deployed to any platform that supports Next.js:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+
 
 **Mohammad Aasif Najar**
 - Portfolio: [aasifnajar.dev](https://aasifnportfolio.netlify.app/)
