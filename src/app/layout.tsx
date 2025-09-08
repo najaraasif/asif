@@ -51,9 +51,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-touch-fullscreen" content="yes" />
         <meta name="format-detection" content="telephone=no" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </head>
       <body className={`${inter.className} bg-gradient-to-br from-luxury-dark via-luxury-blue to-luxury-dark min-h-screen antialiased`}>
         <div className="particle-bg" id="particle-container"></div>
