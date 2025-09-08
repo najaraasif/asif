@@ -5,9 +5,9 @@ export const personalInfo = {
   title: "Web, App & Backend Developer",
   subtitle: "Since 2017",
   location: "Kashmir, India",
-  email: "aasif@example.com", // Replace with actual email
-  phone: "+91 XXXXX XXXXX", // Replace with actual phone
-  bio: "A seasoned full-stack developer with over a decade of experience crafting exceptional digital experiences. Specializing in modern web technologies, mobile applications, and scalable backend solutions.",
+  email: "Najaraasif944@gmail.com", // Replace with actual email
+  phone: "+91 7889595508", // Replace with actual phone
+  bio: "A seasoned full-stack developer with 7+ years of experience crafting exceptional digital experiences. Specializing in modern web technologies, mobile applications, and scalable backend solutions.",
   yearsOfExperience: 10,
   projectsCompleted: 120,
   clientSatisfaction: 95,
@@ -28,7 +28,7 @@ export const achievements: Achievement[] = [
   },
   {
     title: "Years Experience",
-    value: "10+",
+    value: "7+",
     description: "A decade of professional development experience",
     icon: "💎"
   },
@@ -112,22 +112,22 @@ export const projects: Project[] = [
 export const socialLinks: SocialLink[] = [
   {
     name: "GitHub",
-    url: "https://github.com/aasifnajar", // Replace with actual URLs
+    url: "https://github.com/najaraasif", // Replace with actual URLs
     icon: "🐙"
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/aasifnajar",
+    url: "https://www.linkedin.com/in/mohammad-aasif-najar-a31615146/",
     icon: "💼"
   },
   {
     name: "Twitter",
-    url: "https://twitter.com/aasifnajar",
+    url: "https://twitter.com/Aasifjamal99",
     icon: "🐦"
   },
   {
     name: "Email",
-    url: "mailto:aasif@example.com",
+    url: "mailto:najaraaif944@gmail.com",
     icon: "📧"
   }
 ];
