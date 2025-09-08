@@ -80,8 +80,8 @@ export const projects: Project[] = [
     description: "A comprehensive food delivery platform with real-time tracking, payment integration, and restaurant management system.",
     image: "/projects/biteque.jpg", // You'll need to add actual images
     technologies: ["React Native", "Node.js", "MongoDB", "Socket.io", "Stripe"],
-    liveUrl: "https://biteque.app",
-    githubUrl: "https://github.com/aasif/biteque",
+    liveUrl: "#",
+    githubUrl: "#",
     featured: true,
     category: "fullstack"
   },
@@ -92,18 +92,18 @@ export const projects: Project[] = [
     image: "/projects/edufrugal.jpg",
     technologies: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "WebRTC"],
     liveUrl: "https://edufrugal.com",
-    githubUrl: "https://github.com/aasif/edufrugal",
+    githubUrl: "#",
     featured: true,
     category: "web"
   },
   {
     id: "portfolio",
-    title: "3D Portfolio Website",
-    description: "This ultra-luxurious 3D portfolio showcasing advanced web technologies and immersive user experiences.",
+    title: "Portfolio Website",
+    description: "This portfolio showcasing advanced web technologies and immersive user experiences.",
     image: "/projects/portfolio.jpg",
     technologies: ["Next.js", "Three.js", "React Three Fiber", "GSAP", "Tailwind CSS"],
     liveUrl: "https://aasifnajar.dev",
-    githubUrl: "https://github.com/aasif/portfolio",
+    githubUrl: "https://github.com/najaraasif/asif",
     featured: true,
     category: "web"
   }
