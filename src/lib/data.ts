@@ -8,7 +8,7 @@ export const personalInfo = {
   email: "Najaraasif944@gmail.com", // Replace with actual email
   phone: "+91 7889595508", // Replace with actual phone
   bio: "A seasoned full-stack developer with 7+ years of experience crafting exceptional digital experiences. Specializing in modern web technologies, mobile applications, and scalable backend solutions.",
-  yearsOfExperience: 10,
+  yearsOfExperience: 7,
   projectsCompleted: 120,
   clientSatisfaction: 95,
 };
